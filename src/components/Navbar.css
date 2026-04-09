@@ -1,0 +1,40 @@
+/* .navDiv{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    padding: 15px;
+    margin: 20px;
+    gap: 20px;
+} */
+
+.navDiv {
+  display: flex;
+  min-width: 60%;
+  gap: 100px;
+  padding: 15px 30px;
+  /* background-color: #1e1e2f; */
+  margin-bottom: 20px;
+}
+
+/* Default NavLink */
+.navLink {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.navLink:hover {
+  color: white;
+  /* background-color: #3a3a5a; */
+}
+
+/* Active link */
+.navLink.active {
+  color: white;
+  background-color: #6c63ff;
+}
