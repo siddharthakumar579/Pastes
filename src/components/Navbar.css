@@ -9,11 +9,12 @@
 
 .navDiv {
   display: flex;
-  min-width: 60%;
+  width: 100%;
   gap: 100px;
   padding: 15px 30px;
-  /* background-color: #1e1e2f; */
+  /* background-color: #030314; */
   margin-bottom: 20px;
+  justify-content: space-evenly;
 }
 
 /* Default NavLink */

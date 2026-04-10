@@ -1,17 +1,19 @@
 import './App.css'
 import './components/Home.css'
+import './components/Paste.css'
+import './components/Navbar.css'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import ViewPaste from './components/ViewPaste'
-import Createpaste from './components/Createpaste'
+import Paste from './components/Paste'
 
 const router = createBrowserRouter(
   [
     {
       path: "/",
       element:
-      <div>
+      <div className='homeNav'>
         <Navbar />
         <Home />
       </div>
@@ -19,15 +21,15 @@ const router = createBrowserRouter(
     {
       path: "/pastes",
       element: 
-      <div>
+      <div className='homeNav'>
         <Navbar />
-        <Createpaste />
+        <Paste />
       </div>
     },
     {
       path: "/pastes/:id",
       element: 
-      <div>
+      <div className='homeNav'>
         <Navbar />
         <ViewPaste />
       </div>
