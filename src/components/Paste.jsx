@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { deletePaste } from "../redux/pasteSlice";
+import toast from "react-hot-toast";
 // import './Paste.css'
 
-const Paste = () => {
+const paste = () => {
   const pastes = useSelector((state) => state.paste.pastes);
   const [searchTerm, setSearchTerm] = useState("");
   const dispatch = useDispatch();
@@ -17,11 +19,13 @@ const Paste = () => {
   function handleView() {
     
   }
-  function handleDelete() {
+  function handleDelete(pasteId) {
+    dispatch(deletePaste(pasteId))
     
   }
-  function handleCopy() {
-    
+  function handleCopy(content) {
+    navigator.clipboard.writeText(content)
+    toast.success("Copy Successfull")
   }
   function handleShare() {
     
@@ -40,7 +44,7 @@ const Paste = () => {
         {filteredData.length > 0 &&
           filteredData.map((paste) => {
             return (
-              <div className="card_div">
+              <div className="card_div" key={paste?._id}>
                 <div className="details_div">
                   <div className="title_div">{paste.title}</div>
                   <div className="content_div">{paste.content}</div>
@@ -52,13 +56,13 @@ const Paste = () => {
                   <button className="buttons" onClick={handleView()}>
                     View
                   </button>
-                  <button className="buttons" onClick={() => handleDelete()}>
+                  <button className="buttons" onClick={() => handleDelete(paste?._id)}>
                     Delete
                   </button>
                   <button className="buttons" onClick={handleShare()}>
                     Share
                   </button>
-                  <button className="buttons" onClick={handleCopy()}>
+                  <button className="buttons" onClick={() => handleCopy(paste.content)}>
                     Copy
                   </button>
                 </div>
@@ -74,4 +78,4 @@ const Paste = () => {
   );
 };
 
-export default Paste;
+export default paste;
