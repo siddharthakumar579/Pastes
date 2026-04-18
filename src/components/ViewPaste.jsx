@@ -3,7 +3,7 @@ import React from 'react'
 const ViewPaste = () => {
   return (
     <div>
-      paste View
+      paste View page 
     </div>
   )
 }
