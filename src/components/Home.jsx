@@ -28,7 +28,7 @@ const Home = () => {
       dispatch(addPaste(paste))
     }
 
-    //after creation / updation
+    //after creation/updation
     setTitle('')
     setValue('')
     setSearchParams({ })
