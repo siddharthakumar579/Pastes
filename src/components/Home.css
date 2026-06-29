@@ -10,7 +10,7 @@
 /* Focus state */
 .titleInput:focus {
   border-color: #6366f1; /* indigo-500 */
-  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.5); /* ring-2 */
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.5);
 }
 
 
